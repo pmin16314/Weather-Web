@@ -20,9 +20,7 @@ function GetLocation(searchTerm) {
     )
       .then((response) => setData(response.data))
       .catch((err) => setError(err));
-  }, [searchTerm]);
+  }, []);
 
   return { data, loading, error };
 }
-
-export default GetLocation;
