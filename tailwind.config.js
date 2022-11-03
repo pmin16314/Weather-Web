@@ -8,6 +8,7 @@ module.exports = {
         secondary: "#2F69FE",
         miniText: "#A3A6AC",
         cardColor: "#EEF2F3",
+        cardDark: "#E9ECED",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],

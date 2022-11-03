@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const Search = () => {
   const [search, setSearch] = useState("");
+  const [data, setData] = useState([]);
 
   const onChange = (event) => {
     setSearch(event.target.value);
@@ -11,18 +13,28 @@ const Search = () => {
   useEffect(() => {
     const options = {
       method: "GET",
+      url: "https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions",
+      params: { minPopulation: "100000", namePrefix: `${search}` },
       headers: {
         "X-RapidAPI-Key": "67ae22f399mshf30dea5a15dfc91p195a51jsn7e82034fddeb",
         "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
       },
     };
-    fetch(
-      `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?minPopulation=100000&namePrefix=${search}`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => console.log(response))
-      .catch((err) => console.error(err));
+
+    if (search !== "") {
+      const timeOutId = setTimeout(() => {
+        axios
+          .request(options)
+          .then(function (response) {
+            console.log(response.data.data);
+            setData(response.data.data);
+          })
+          .catch(function (error) {
+            console.error(error);
+          });
+      }, 500);
+      return () => clearTimeout(timeOutId);
+    }
   }, [search]);
 
   return (

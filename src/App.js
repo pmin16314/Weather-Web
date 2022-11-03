@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 //import ApiTest from "./components/ApiTest";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
+import WeatherR from "./components/weather_results/WeatherR";
 import styles from "./styles";
 
 const App = () => {
+  const [locationData, setLocationData] = useState(null);
+
   return (
     <div
-      className={`w-full overflow-hidden ${styles.flexCenter} ${styles.paddingX} font-poppins`}>
+      className={`w-full ${styles.flexCenter} ${styles.paddingX} flex-col font-poppins`}>
       <div className={`${styles.boxWidth}`}>
-        <Header />
+        <Header setLocationData={setLocationData} />
+      </div>
+      <div className={`${styles.boxWidth}`}>
+        {locationData && <WeatherR locationData={locationData} />}
       </div>
     </div>
-    // <div>
-    //   <ApiTest />
-    // </div>
   );
 };
 

@@ -49,15 +49,13 @@ const Time = () => {
   minutes = minutes.toString().padStart(2, "0");
 
   return (
-    <div className='text-primary flex flex-col'>
+    <div className='text-primary flex flex-col text-right '>
       <div className='m-0 leading-none'>
-        <span className='text-[96px] font-medium '>
-          {hours}.{minutes}
+        <span className='text-[35px] font-semibold'>
+          {hours}.{minutes} {ampm}
         </span>
-        {"  "}
-        <span className='text-[40px] font-medium'>{ampm}</span>
       </div>
-      <div className='text-[26px] mb-3 text-miniText font-medium'>
+      <div className='text-[20px] mb-3 text-miniText font-medium'>
         {day}
         {", "}
         {dte} {month} {year}
