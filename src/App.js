@@ -9,7 +9,7 @@ const App = () => {
 
   return (
     <div
-      className={`w-full ${styles.flexCenter} ${styles.paddingX} flex-col font-poppins`}>
+      className={`w-full ${styles.flexCenter} ${styles.paddingX} flex-col font-poppins py-5`}>
       <div className={`${styles.boxWidth}`}>
         <Header setLocationData={setLocationData} />
       </div>

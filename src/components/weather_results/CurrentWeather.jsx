@@ -7,7 +7,7 @@ import visibility from "../../img/weather_icons/icons_visibility.svg";
 
 const CurrentWeather = ({ data }) => {
   return (
-    <div className='flex flex-col p-[1.5rem]'>
+    <div className='flex flex-col p-[1.5rem] h-[500px]'>
       <div className='flex flex-row justify-between'>
         <div className='flex flex-col '>
           <p className='font-bold text-secondary text-[50px] leading-none'>
@@ -30,7 +30,7 @@ const CurrentWeather = ({ data }) => {
         <div className='flex flex-col items-center pr-7'>
           <img
             alt='weatherIcon'
-            src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+            src={`icons/1_${data.weather[0].icon}.png`}
             className='w-[250px] '
           />
           <div className='font-bold text-[40px] text-primary text-center'>

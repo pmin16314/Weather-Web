@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CurrentWeather from "./CurrentWeather";
 import SunRiseSet from "./SunRiseSet";
+import Forecast from "./Forecast";
 
 const WeatherR = ({ locationData }) => {
   const [cWeather, setCWeather] = useState(null);
@@ -37,16 +38,12 @@ const WeatherR = ({ locationData }) => {
     <div className='flex flex-row pt-[5px] justify-between w-full'>
       <div className=' basis-4/7  mr-[15px] w-[1026px] h-auto'>
         <div className='mb-[15px]  bg-cardColor rounded-[10px]'>
-          <div className='p-2'>
-            {" "}
-            {cWeather && <CurrentWeather data={cWeather} />}{" "}
-          </div>
+          {cWeather && <CurrentWeather data={cWeather} />}
         </div>
-        <div>{cWeather && <SunRiseSet data={cWeather} />}</div>
+        {cWeather && <SunRiseSet data={cWeather} />}
       </div>
       <div className='basis-3/7 bg-cardColor rounded-[10px] w-[550px] h-auto'>
-        dasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        {forecast && <Forecast data={forecast} />}
       </div>
     </div>
   );
