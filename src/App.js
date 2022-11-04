@@ -9,12 +9,15 @@ const App = () => {
 
   return (
     <div
-      className={`w-full ${styles.flexCenter} ${styles.paddingX} flex-col font-poppins py-5`}>
+      className={`w-full ${styles.flexCenter} ${styles.paddingX} flex-col font-poppins`}>
       <div className={`${styles.boxWidth}`}>
         <Header setLocationData={setLocationData} />
       </div>
       <div className={`${styles.boxWidth}`}>
         {locationData && <WeatherR locationData={locationData} />}
+      </div>
+      <div className='mt-6 text-miniText font-medium'>
+        Copyright Ⓒ 2022 The weather Report. All Rights Reserved.
       </div>
     </div>
   );

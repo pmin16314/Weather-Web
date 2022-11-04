@@ -7,7 +7,7 @@ import visibility from "../../img/weather_icons/icons_visibility.svg";
 
 const CurrentWeather = ({ data }) => {
   return (
-    <div className='flex flex-col p-[1.5rem] h-[500px]'>
+    <div className='flex flex-col p-[1.5rem] h-[480px]'>
       <div className='flex flex-row justify-between'>
         <div className='flex flex-col '>
           <p className='font-bold text-secondary text-[50px] leading-none'>

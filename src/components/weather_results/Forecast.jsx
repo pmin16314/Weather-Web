@@ -21,13 +21,13 @@ const Forecast = ({ data }) => {
 
   console.log({ forecastData });
   return (
-    <div className=' flex flex-col p-[1.5rem] overflow-hidden h-[715px]'>
+    <div className=' flex flex-col p-[1.5rem] overflow-hidden h-[695px]'>
       <h1 className='font-semibold text-[30px] text-miniText mb-4'>Forecast</h1>
       <div className='flex flex-col  overflow-auto '>
         {forecastData.map((foreaseOfADay, index) => (
           <div
             key={index}
-            className={`flex flex-row justify-between items-center w-11/12 self-center h-[100px] ${
+            className={`grid grid-cols-3 items-center w-11/12 self-center h-[100px] ${
               index !== weekdays.length - 1 ? `border-b-2` : `b-0`
             }`}>
             <p className='font-medium text-[20px] text-miniText'>
@@ -43,7 +43,7 @@ const Forecast = ({ data }) => {
                 {foreaseOfADay.weather[0].main}
               </p>
             </div>
-            <div className='text-[20px] text-miniText '>
+            <div className='text-[20px] text-miniText justify-self-end'>
               <span className='font-bold'>
                 {Math.round(foreaseOfADay.main.temp_max - 273.15)}°C
               </span>
