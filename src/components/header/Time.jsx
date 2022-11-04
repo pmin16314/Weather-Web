@@ -1,65 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import moment from "moment/moment";
+import { useEffect, useState } from "react";
 
 const Time = () => {
-  const [date, setDate] = useState(new Date());
+  const [date1, setDate1] = useState(moment().format("h.mm A"));
 
   useEffect(() => {
-    const interval = setInterval(() => setDate(new Date()), 1000);
+    const interval = setInterval(
+      () => setDate1(moment().format("h.mm A")),
+      1000
+    );
 
     return () => {
       clearInterval(interval);
     };
   }, []);
 
-  const weekday = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-
-  let hours = date.getHours();
-  let minutes = date.getMinutes();
-  let [day, dte, month, year] = [
-    weekday[date.getDay()],
-    date.getDate(),
-    months[date.getMonth() - 1],
-    date.getFullYear(),
-  ];
-  let ampm = hours >= 12 ? "PM" : "PM";
-  hours = hours % 12;
-  hours = hours.toString().padStart(2, "0");
-  minutes = minutes.toString().padStart(2, "0");
+  const date2 = moment().format("dddd, Do MMMM YYYY");
 
   return (
     <div className='text-primary flex flex-col text-right '>
       <div className='m-0 leading-none'>
-        <span className='text-[35px] font-semibold'>
-          {hours}.{minutes} {ampm}
-        </span>
+        <span className='text-[35px] font-semibold'>{date1}</span>
       </div>
-      <div className='text-[20px] mb-3 text-miniText font-medium'>
-        {day}
-        {", "}
-        {dte} {month} {year}
-      </div>
+      <div className='text-[20px] mb-3 text-miniText font-medium'>{date2}</div>
     </div>
   );
 };
