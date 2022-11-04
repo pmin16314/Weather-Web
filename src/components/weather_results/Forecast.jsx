@@ -36,7 +36,10 @@ const Forecast = ({ data }) => {
             <div className='flex flex-row items-center space-x-2'>
               <img
                 alt='weatherIcon'
-                src={`icons/1_${foreaseOfADay.weather[0].icon}.png`}
+                src={`icons/1_${foreaseOfADay.weather[0].icon.slice(
+                  0,
+                  2
+                )}d.png`}
                 className='w-[50px] '
               />
               <p className='font-bold text-[20px] text-primary'>
