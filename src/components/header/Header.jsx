@@ -12,7 +12,7 @@ const Header = ({ setLocationData }) => {
   return (
     <div className="flex flex-row justify-between mt-[20px] mb-[10px] pb-[10px] border-b-2">
       <div>
-        <img className="w-[200px] py-4 " alt="logo" src={logo} />
+        <img className="w-[250px] py-4 " alt="logo" src={logo} />
       </div>
 
       <div>
