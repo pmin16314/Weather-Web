@@ -40,12 +40,7 @@ const Search = () => {
   return (
     <div>
       <div>
-        <input
-          type='text'
-          value={search}
-          placeholder='Enter the city...'
-          onChange={onChange}
-        />
+        <input type="text" value={search} placeholder="Enter the city..." onChange={onChange} />
       </div>
     </div>
   );

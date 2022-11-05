@@ -3,9 +3,7 @@ import React from "react";
 const Forecast = ({ data }) => {
   const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   const today = new Date().getDay();
-  const forecastDayList = weekdays
-    .slice(today, weekdays.length)
-    .concat(weekdays.slice(0, today));
+  const forecastDayList = weekdays.slice(today, weekdays.length).concat(weekdays.slice(0, today));
 
   console.log(forecastDayList);
 
@@ -21,37 +19,30 @@ const Forecast = ({ data }) => {
 
   console.log({ forecastData });
   return (
-    <div className=' flex flex-col p-[1.5rem] overflow-hidden h-[695px]'>
-      <h1 className='font-semibold text-[30px] text-miniText mb-4'>Forecast</h1>
-      <div className='flex flex-col  overflow-auto '>
+    <div className=" flex flex-col p-[1.5rem] overflow-hidden h-[695px]">
+      <h1 className="font-semibold text-[30px] text-miniText mb-4">Forecast</h1>
+      <div className="flex flex-col  overflow-auto ">
         {forecastData.map((foreaseOfADay, index) => (
           <div
             key={index}
             className={`grid grid-cols-3 items-center w-11/12 self-center h-[100px] ${
               index !== weekdays.length - 1 ? `border-b-2` : `b-0`
             }`}>
-            <p className='font-medium text-[20px] text-miniText'>
-              {forecastDayList[index]}
-            </p>
-            <div className='flex flex-row items-center space-x-2'>
+            <p className="font-medium text-[20px] text-miniText">{forecastDayList[index]}</p>
+            <div className="flex flex-row items-center space-x-2">
               <img
-                alt='weatherIcon'
-                src={`icons/1_${foreaseOfADay.weather[0].icon.slice(
-                  0,
-                  2
-                )}d.png`}
-                className='w-[50px] '
+                alt="weatherIcon"
+                src={`icons/1_${foreaseOfADay.weather[0].icon.slice(0, 2)}d.png`}
+                className="w-[50px] "
               />
-              <p className='font-bold text-[20px] text-primary'>
-                {foreaseOfADay.weather[0].main}
-              </p>
+              <p className="font-bold text-[20px] text-primary">{foreaseOfADay.weather[0].main}</p>
             </div>
-            <div className='text-[20px] text-miniText justify-self-end'>
-              <span className='font-bold'>
+            <div className="text-[20px] text-miniText justify-self-end">
+              <span className="font-bold">
                 {Math.round(foreaseOfADay.main.temp_max - 273.15)}°C
               </span>
               {"/"}
-              <span className='font-medium'>
+              <span className="font-medium">
                 {Math.round(foreaseOfADay.main.temp_min - 273.15)}°C
               </span>
             </div>

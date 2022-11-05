@@ -8,15 +8,14 @@ const App = () => {
   const [locationData, setLocationData] = useState(null);
 
   return (
-    <div
-      className={`w-full ${styles.flexCenter} ${styles.paddingX} flex-col font-poppins`}>
+    <div className={`w-full ${styles.flexCenter} ${styles.paddingX} flex-col font-poppins`}>
       <div className={`${styles.boxWidth}`}>
         <Header setLocationData={setLocationData} />
       </div>
       <div className={`${styles.boxWidth}`}>
         {locationData && <WeatherR locationData={locationData} />}
       </div>
-      <div className='mt-6 text-miniText font-medium'>
+      <div className="mt-6 text-miniText font-medium">
         Copyright Ⓒ 2022 The weather Report. All Rights Reserved.
       </div>
     </div>
