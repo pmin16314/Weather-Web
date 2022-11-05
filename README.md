@@ -8,6 +8,7 @@
 - Tailwinnd CSS
 
 ## <b>Deployed Site</b>
+https://fascinating-vacherin-4384e7.netlify.app/
 
 ## <b>External resources</b>
 
