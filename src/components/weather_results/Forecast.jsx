@@ -20,7 +20,9 @@ const Forecast = ({ data }) => {
   console.log({ forecastData });
   return (
     <div className=" flex flex-col p-[1.5rem] overflow-hidden h-[695px]">
-      <h1 className="font-semibold text-[30px] text-miniText mb-4">Forecast</h1>
+      <h1 className="font-semibold text-[30px] text-miniText dark:text-darkMiniText  mb-4">
+        Forecast
+      </h1>
       <div className="flex flex-col  overflow-auto ">
         {forecastData.map((foreaseOfADay, index) => (
           <div
@@ -28,16 +30,20 @@ const Forecast = ({ data }) => {
             className={`grid grid-cols-3 items-center w-11/12 self-center h-[100px] ${
               index !== weekdays.length - 1 ? `border-b-2` : `b-0`
             }`}>
-            <p className="font-medium text-[20px] text-miniText">{forecastDayList[index]}</p>
+            <p className="font-medium text-[20px] text-miniText dark:text-darkMiniText">
+              {forecastDayList[index]}
+            </p>
             <div className="flex flex-row items-center space-x-2">
               <img
                 alt="weatherIcon"
                 src={`icons/1_${foreaseOfADay.weather[0].icon.slice(0, 2)}d.png`}
                 className="w-[50px] "
               />
-              <p className="font-bold text-[20px] text-primary">{foreaseOfADay.weather[0].main}</p>
+              <p className="font-bold text-[20px] text-primary dark:text-darkPrimary">
+                {foreaseOfADay.weather[0].main}
+              </p>
             </div>
-            <div className="text-[20px] text-miniText justify-self-end">
+            <div className="text-[20px] text-miniText dark:text-darkMiniText justify-self-end">
               <span className="font-bold">
                 {Math.round(foreaseOfADay.main.temp_max - 273.15)}°C
               </span>

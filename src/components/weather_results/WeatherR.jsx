@@ -37,12 +37,12 @@ const WeatherR = ({ locationData }) => {
   return (
     <div className="flex flex-row pt-[5px] justify-between w-full">
       <div className=" basis-4/7  mr-[15px] w-[1026px] h-auto">
-        <div className="mb-[15px]  bg-cardColor rounded-[10px]">
+        <div className="mb-[15px]  bg-cardColor dark:bg-darkCardColor rounded-[10px]">
           {cWeather && <CurrentWeather data={cWeather} />}
         </div>
         {cWeather && <SunRiseSet data={cWeather} />}
       </div>
-      <div className="basis-3/7 bg-cardColor rounded-[10px] w-[550px] h-auto">
+      <div className="basis-3/7 bg-cardColor dark:bg-darkCardColor rounded-[10px] w-[550px] h-auto">
         {forecast && <Forecast data={forecast} />}
       </div>
     </div>

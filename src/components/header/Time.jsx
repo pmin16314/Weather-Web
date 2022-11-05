@@ -16,11 +16,11 @@ const Time = () => {
   const date2 = moment().format("dddd, Do MMMM YYYY");
 
   return (
-    <div className="text-primary flex flex-col text-right ">
+    <div className="text-primary  dark:text-darkSecondary flex flex-col text-right ">
       <div className="m-0 leading-none">
         <span className="text-[35px] font-semibold">{date1}</span>
       </div>
-      <div className="text-[20px] mb-3 text-miniText font-medium">{date2}</div>
+      <div className="text-[20px] text-miniText dark:text-darkMiniText font-medium">{date2}</div>
     </div>
   );
 };
